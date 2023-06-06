@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Performance Feedback - Employee View</title>
+  <link rel="stylesheet" href="/styles.css"> <!-- Adjust the path if necessary -->
+</head>
+<body>
+  <h1>Employee View</h1>
+
+  <h2>Performance Reviews Requiring Feedback</h2>
+
+  <ul id="reviewsList"></ul>
+
+  <h3>Submit Feedback</h3>
+
+  <form id="feedbackForm">
+    <select id="reviewSelect" required>
+      <option disabled selected>Select a Review</option>
+    </select>
+    <textarea id="feedbackText" placeholder="Enter feedback..." required></textarea>
+    <button type="submit">Submit Feedback</button>
+  </form>
+
+  <script >
+document.addEventListener('DOMContentLoaded', () => {
+    const reviewsList = document.getElementById('reviewsList');
+    const feedbackForm = document.getElementById('feedbackForm');
+    const reviewSelect = document.getElementById('reviewSelect');
+    const feedbackTextInput = document.getElementById('feedbackText');
+  
+    // Submit feedback
+    feedbackForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const selectedReview = reviewSelect.value;
+      const feedbackText = feedbackTextInput.value;
+      // Perform the necessary action to submit feedback
+      console.log('Submitting feedback for review', selectedReview, ':', feedbackText);
+      reviewSelect.selectedIndex = 0;
+      feedbackTextInput.value = '';
+    });
+  });
+  </script> <!-- Adjust the path if necessary -->
+</body>
+</html>

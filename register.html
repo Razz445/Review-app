@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Performance Feedback - Register</title>
+  <link rel="stylesheet" href="/styles.css"> <!-- Adjust the path if necessary -->
+</head>
+<body>
+  <h1>Register</h1>
+
+  <form id="registerForm">
+    <input type="text" id="username" placeholder="Username" required>
+    <input type="password" id="password" placeholder="Password" required>
+    <button type="submit">Register</button>
+  </form>
+
+  <script >
+    document.addEventListener('DOMContentLoaded', () => {
+    const registerForm = document.getElementById('registerForm');
+  
+    // Register
+    registerForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      // Perform the necessary action to register the user
+      console.log('Registering with username:', username, 'and password:', password);
+      registerForm.reset();
+    });
+  });
+  </script> <!-- Adjust the path if necessary -->
+</body>
+</html>
